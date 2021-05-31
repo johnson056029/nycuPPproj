@@ -1,7 +1,15 @@
 #StochHMM - A Flexible hidden Markov model application and C++ library.
 
+
+
 ***
+# Top
+
+This is a copied repository for education purpose. For the original repository, refer to the source as follows:
+https://github.com/KorfLab/StochHMM
+
 #Introduction
+
 
 
 StochHMM is a free, open source C++ Library and application that implements HMM
