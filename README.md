@@ -8,6 +8,10 @@
 This is a copied repository for education purpose. For the original repository, refer to the source as follows:
 https://github.com/KorfLab/StochHMM
 
+The original README context by Korflab is as follows( starting from Introduction section )
+Here, as an project for parallelizing the viterbi process, the file src/viterbi.cpp is primarily modified to implement SIMD parallelization.
+
+
 #Introduction
 
 
