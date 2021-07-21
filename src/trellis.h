@@ -39,6 +39,7 @@
 #include <iomanip>
 #include "stochTable.h"
 #include "sparseArray.h"
+#include <nmmintrin.h>
 
 namespace StochHMM{
 	
@@ -177,6 +178,9 @@ namespace StochHMM{
 		
 		void simple_viterbi();
 		void simple_viterbi(model* h, sequences* sqs);
+
+                void update_interval(int levels_tobe_updated, std::vector<std::vector<std::vector<float>>> &scoring_table_, std::vector<std::vector<int>> &traceback_table_, size_t iter_seq_y, int t, __m128 _d_4f, __m128 _e_4f);
+        void trace_and_align( std::string seq_x, std::string seq_y, size_t tracer_x, size_t tracer_y, std::vector<std::vector<std::vector<float>>> &scoring_table_, std::vector<std::vector<int>> &traceback_table_, int seq_x_size_real);
 				
 //		void simple_forward_viterbi();
 //		void simple_forward_viterbi(model* h, sequences* sqs);

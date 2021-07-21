@@ -96,6 +96,7 @@ StateFuncs default_functions;
 
 int main(int argc, const char * argv[])
 {
+        std::cout << OPT_NONE << std::endl;
     srand(time(NULL));
     //Parse commandline arguments defined
     opt.set_parameters(commandline,opt_size,usage);
@@ -413,21 +414,21 @@ void print_output(traceback_path* tb, std::string& header){
     bool previous(true);
     
     if (opt.isSet("-gff")){
-        std::cout << "#Score: " << tb->getScore() << std::endl;
+        // std::cout << "#Score: " << tb->getScore() << std::endl;
         tb->print_gff(header);
         previous=false;
     }
     
     if (opt.isSet("-label")){
 		std::cout << ">" << header ;
-        std::cout << "\tScore: " << tb->getScore() << std::endl;
+        // std::cout << "\tScore: " << tb->getScore() << std::endl;
         tb->print_label();
         previous=false;
     }
     
     if (opt.isSet("-path") || previous){
 		std::cout << ">" << header ;
-        std::cout << "\tScore: " << tb->getScore() << std::endl;
+        // std::cout << "\tScore: " << tb->getScore() << std::endl;
         tb->print_path();
     }
     

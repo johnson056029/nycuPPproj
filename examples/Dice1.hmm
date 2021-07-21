@@ -1,0 +1,63 @@
+#STOCHHMM MODEL FILE
+MODEL INFORMATION
+======================================================
+MODEL_NAME:	CASINO DICE MODEL
+MODEL_DESCRIPTION:	Taken from CH3 Durbin/Eddy
+MODEL_CREATION_DATE:	August 28,2009
+
+TRACK SYMBOL DEFINITIONS
+======================================================
+DICE:	a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x
+
+STATE DEFINITIONS
+#############################################
+STATE:	
+	NAME:	INIT
+TRANSITION:	STANDARD: P(X)
+	MATCH:	0.3
+	INSTX:	0.3
+	INSTY:	0.3
+#############################################
+STATE:	
+	NAME:	MATCH
+	PATH_LABEL:	M
+	GFF_DESC:	Match
+TRANSITION:	STANDARD: P(X)
+	MATCH:	0.3
+	INSTX:	0.3
+	INSTY:	0.3
+	END:	1
+EMISSION:	DICE: P(X)
+	ORDER:	0
+@a b c d e f g h i j k l m n o p q r s t u v w x
+0.0625  0.0625  0.0625  0.0625  0.0625  0.0625  0.0625  0.0625  0.0625  0.0625  0.0625  0.0625  0.0625  0.0625  0.0625  0.0625  0 0 0 0 0 0 0 0
+#############################################
+STATE:
+	NAME:	INSTX
+	PATH_LABEL:	X
+	GFF_DESC:	InsertX
+TRANSITION:	STANDARD: P(X)
+	MATCH:	0.3
+        INSTX:	0.6
+        INSTY:	0
+	END:	1
+EMISSION:	DICE: P(X)
+	ORDER:	0
+@a b c d e f g h i j k l m n o p q r s t u v w x
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0.25 0.25 0.25 0 0 0 0
+#############################################
+STATE:
+	NAME:	INSTY
+	PATH_LABEL:	Y
+	GFF_DESC:	InsertY
+TRANSITION:	STANDARD: P(X)
+	MATCH:	0.3
+	INSTX:	0
+	INSTY:	0.6
+	END:	1
+EMISSION:	DICE: P(X)
+	ORDER:	0
+@a b c d e f g h i j k l m n o p q r s t u v w x
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0.25 0.25 0.25
+#############################################
+//END
